@@ -9,3 +9,6 @@ TVNOW Downloader in Python (only supports free content)
 
 ## Usage
 No instructions required, it's self-explanatory
+
+## Credits
+Inspired by https://github.com/Pati/plugin.video.tvnow.de
