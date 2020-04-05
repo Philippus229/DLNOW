@@ -15,13 +15,12 @@ def config_type(c):
     return None
 
 def get_token():
-    rq1 = session.get("https://www.tvnow.de/").text
-    try: DOC = re.findall(r'<script src="(main\-[A-z0-9]+\.[A-z0-9]+\.js)"', rq1, re.S)[-1]
+    rq0 = session.get("https://www.tvnow.de/").text
+    try: doc = re.findall(r'<script src="(main\-[A-z0-9]+\.[A-z0-9]+\.js)"', rq0, re.S)[-1]
     except: print("Token not found!")
-    rq2 = session.get("https://www.tvnow.de/"+DOC).text
-    num = re.search(r'{key:"getDefaultUserdata",value:function\(\){return{token:"([A-z0-9.]+)"', rq2)
-    if num:
-        return num.group(1)
+    rq1 = session.get("https://www.tvnow.de/"+doc).text
+    num = re.search(r'{key:"getDefaultUserdata",value:function\(\){return{token:"([A-z0-9.]+)"', rq1)
+    if num: return num.group(1)
     return "0"
 
 def login(no_login=True):
