@@ -1,7 +1,7 @@
 <b>DISCLAIMER</b>: For educational purposes only!
 
 # DLNOW
-TVNOW Downloader in Python (only supports free content)
+TVNOW Downloader in Python (only supports free content without DRM protection)
 
 ## Requirements
  - Python 3.x with requests
