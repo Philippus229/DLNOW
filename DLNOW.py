@@ -16,7 +16,7 @@ def config_type(c):
 
 def get_token():
     rq0 = session.get("https://www.tvnow.de/").text
-    try: doc = re.findall(r'<script src="(main\-[A-z0-9]+\.[A-z0-9]+\.js)"', rq0, re.S)[-1]
+    try: doc = re.findall(r'<script src="(main\.[A-z0-9]+\.js)"', rq0, re.S)[-1]
     except: print("Token not found!")
     rq1 = session.get("https://www.tvnow.de/"+doc).text
     num = re.search(r'{key:"getDefaultUserdata",value:function\(\){return{token:"([A-z0-9.]+)"', rq1)
